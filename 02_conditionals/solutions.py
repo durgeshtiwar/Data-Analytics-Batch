@@ -9,11 +9,12 @@
 #   print("Senior")
 
 
-# age_group = int(input("What is your age ?"))
-# if(age_group >= 18):
-#   print("Your Ticket price is",12 - 2, "$")
-# else:
-#   print("Your Ticket price is",8 - 2, "$")
+# age_group = int(input("What is your age ?\n"))
+# day = input("What is day Today ?\n")
+# ticket_price = 12 if age_group >= 18 else 8
+# if(day == "Wednesday"):
+#   ticket_price = ticket_price - 2
+#   print("Your Ticket Price is",ticket_price)
 
 
 # Problem: Assign a letter grade based on a student's score: A (90-100), B (80-89), C (70-79), D (60-69), F (below 60).
@@ -33,12 +34,10 @@
 # Problem: Check if a password is "Weak", "Medium", or "Strong". Criteria: < 6 chars (Weak), 6-10 chars (Medium), >10 chars (Strong).
 # Problem: Determine if a year is a leap year. (Leap years are divisible by 4, but not by 100 unless also divisible by 400).
 
-# year = int(input("Enter Year"))
-# if((year % 100 == 0) and (year % 400 == 0)):
-#   print("This is Leap Year")
-# elif(year % 4 == 0):
-#   print("This is a Leap Year")
-# else:
-#   print("This is Not A Leap Year")
+year = int(input("Enter Year"))
+if(year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+  print("This is a Leap Year")
+else:
+  print("This is not a Leap Year")
 
 # Problem: Recommend a type of pet food based on the pet's species and age. (e.g., Dog: <2 years - Puppy food, Cat: >5 years - Senior cat food).
