@@ -19,7 +19,7 @@ previous int,
 poutcome varchar(30),
 y varchar(30)
 );
-select \* from bank_details;
+select * from bank_details;
 insert into bank_details values(58,"management","married","tertiary","no",2143,"yes","no","unknown",5,"may",261,1,-1,0,"unknown","no");
 insert into bank_details values
 (44,"technician","single","secondary","no",29,"yes","no","unknown",5,"may",151,1,-1,0,"unknown","no"),
@@ -114,30 +114,3 @@ insert into bank_details values
 (42,"management","single","secondary","no",50,"no","no","unknown",5,"may",48,1,-1,0,"unknown","no"),
 (30,"technician","married","secondary","no",152,"yes","yes","unknown",5,"may",213,2,-1,0,"unknown","no"),
 (60,"admin.","married","secondary","no",290,"yes","no","unknown",5,"may",583,1,-1,0,"unknown","no");
-
-<!-- with this data try to fine out sum of balance
-Try to find out avarage of balance
-try to find out who is having a min balance
-try to find out who is having a mazxmim balance
-try to prepare a list of all the person who is having loan
-try to find out average balance for all the people whose job role is admin
-try to find out a record  without job whose age is below 45
-try to find out a record where education is primarty and person is jobless
-try to find of a record whose bank account is having a negative balance
-try to find our a record who is not having house at all along with there balance  -->
-
-select sum(balance) as sum_OF_BALANCE from bank_details;
-select avg(balance) as avg_OF_BALANCE from bank_details;
-select min(balance) as min_OF_BALANCE from bank_details;
--- or
-select balance from bank_details order by balance limit 1;
-select max(balance) as max_OF_BALANCE from bank_details;
--- or
-select balance as max_OF_BALANCE from bank_details order by balance desc limit 1;
-select _ from bank_details where balance = -372;
-select _ from bank_details where loan = "yes";
-select avg(balance) as avg_BALANCE_OF_ADMIN from bank_details where job = "admin.";
-select _ from bank_details where age < 45 and job = "unemployed" order by age limit 1;
-select _ from bank_details where education = "primarty" and job= "unemployed" limit 1;
-select \* from bank_details where balance < 0;
-select housing, balance from bank_details where housing = "no";

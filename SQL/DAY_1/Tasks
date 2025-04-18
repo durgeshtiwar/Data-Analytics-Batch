@@ -1,0 +1,27 @@
+
+<!-- with this data try to fine out sum of balance
+Try to find out avarage of balance
+try to find out who is having a min balance
+try to find out who is having a mazxmim balance
+try to prepare a list of all the person who is having loan
+try to find out average balance for all the people whose job role is admin
+try to find out a record  without job whose age is below 45
+try to find out a record where education is primarty and person is jobless
+try to find of a record whose bank account is having a negative balance
+try to find our a record who is not having house at all along with there balance  -->
+
+select sum(balance) as sum_OF_BALANCE from bank_details;
+select avg(balance) as avg_OF_BALANCE from bank_details;
+select min(balance) as min_OF_BALANCE from bank_details;
+-- or
+select balance from bank_details order by balance limit 1;
+select max(balance) as max_OF_BALANCE from bank_details;
+-- or
+select balance as max_OF_BALANCE from bank_details order by balance desc limit 1;
+select _ from bank_details where balance = -372;
+select _ from bank_details where loan = "yes";
+select avg(balance) as avg_BALANCE_OF_ADMIN from bank_details where job = "admin.";
+select _ from bank_details where age < 45 and job = "unemployed" order by age limit 1;
+select _ from bank_details where education = "primarty" and job= "unemployed" limit 1;
+select \* from bank_details where balance < 0;
+select housing, balance from bank_details where housing = "no";
