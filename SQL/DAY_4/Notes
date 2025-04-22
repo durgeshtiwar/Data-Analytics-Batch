@@ -49,3 +49,29 @@ alter table sales1
 add column ship_date_new date after ship_date;
 update sales1 
 set ship_date_new  = str_to_date(ship_date, '%m / %d / %Y');
+
+-- Remaining Part 
+select year_new  , avg(sales) from sales1 group by year_new
+
+select year_new  , sum(sales) from sales1 group by year_new
+
+select year_new  , min(sales) from sales1 group by year_new
+select year_new  , max(sales) from sales1 group by year_new
+
+select year_new , sum(quantity) from sales1 group by year_new
+
+
+select (sales*discount+shipping_cost)  as CTC from sales1;
+select order_id ,discount , if(discount > 0 ,'yes' , 'no') as discount_flag from sales1 
+
+alter table sales1
+modify column discount_flag varchar(20) after discount
+
+select * from sales1 ;
+
+select discount_flag , count(*) from sales1 group by discount_flag 
+
+select count(*) from  sales1 where discount > 0 
+
+update sales1
+set discount_flag = if(discount > 0, 'yes', 'no');
