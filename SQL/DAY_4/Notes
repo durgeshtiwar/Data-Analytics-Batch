@@ -50,7 +50,45 @@ add column ship_date_new date after ship_date;
 update sales1 
 set ship_date_new  = str_to_date(ship_date, '%m / %d / %Y');
 
--- Remaining Part 
+SET SQL_SAFE_UPDATES = 0;
+
+select * from  sales1 where ship_date_new = '2011-01-05';
+select * from  sales1 where ship_date_new < '2011-01-05';
+select * from  sales1 where ship_date_new > '2011-01-05';
+select * from  sales1 where ship_date_new between '2011-01-05' and '2011-08-30';
+select now();
+select curdate();
+select curtime();
+select ship_date_new from sales1 where ship_date_new < date_sub(now(), interval 1 week);
+select date_sub(now(), interval 1 week); 
+select date_sub(now(), interval 1 month);
+select date_sub(now(), interval 1 year);
+select year(now());
+select dayname('2022-09-20 21:10:30');
+alter table sales1
+add column flag date after order_id;
+update sales1
+set flag = now();
+
+ alter table sales1
+ add column year_new int;
+ 
+ alter table sales1
+ add column month_new int;
+ 
+ alter table sales1
+ add column day_new int;
+
+update sales1
+set year_new = year(order_date_new);
+update sales1 
+set month_new = month(order_date_new);
+update sales1
+set day_new = day(order_date_new);
+
+select * from sales1 limit 5;
+
+-- Group By clause 
 select year_new  , avg(sales) from sales1 group by year_new
 
 select year_new  , sum(sales) from sales1 group by year_new
