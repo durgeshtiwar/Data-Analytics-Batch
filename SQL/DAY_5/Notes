@@ -1,0 +1,46 @@
+show databases;
+use sales;
+select * from sales1;
+
+DELIMITER $$
+create function add_to_col3(a int)
+returns int
+DETERMINISTIC 
+BEGIN
+declare b int;
+set b = a + 10;
+return b;
+END $$
+select quantity, add_to_col3(quantity) from sales1;
+
+DELIMITER $$
+create function final_profit(profit float, discount float)
+returns float
+DETERMINISTIC 
+begin
+declare final_Profit float;
+set final_Profit = (profit - discount);
+return final_Profit;
+end $$
+
+select profit, discount, final_profit(profit, discount) from sales1;
+
+DELIMITER &&
+create function mark_sales(sales int)
+returns varchar(30)
+deterministic 
+begin
+declare flag_sales varchar(30);
+if sales <= 100 then
+   set flag_sales = "super affordable product";
+elseif sales > 100  and sales < 300 then
+   set flag_sales = "affordable";
+elseif sales > 300 and sales < 600 then
+   set flag_sales = "moderate price ";
+else 
+    set flag_sales = "expensive" ;
+end if;
+return flag_sales;
+end &&
+
+select sales, mark_sales(sales) from sales1;
