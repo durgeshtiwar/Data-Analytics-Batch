@@ -44,3 +44,24 @@ return flag_sales;
 end &&
 
 select sales, mark_sales(sales) from sales1;
+
+-- LOOPs
+
+
+create table loop_table(val int); 
+
+Delimiter &&
+create procedure insert_data()
+begin
+set @var = 10;
+generate_data  : loop
+insert into loop_table values(@var);
+set @var = @var + 1;
+if @var = 100 then 
+   leave generate_data;
+end if;
+end loop generate_data;
+end &&
+
+call insert_data();
+select * from loop_table;
