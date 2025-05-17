@@ -1,0 +1,18 @@
+Solution: 
+
+
+(* Define the functions x(t) and y(t) as integrals *)
+x[t_] := NIntegrate[Sec[(Pi/2) u^5], {u, 0, t}]
+y[t_] := NIntegrate[Cot[(Pi/2) u^5], {u, 0, t}]
+
+(* Parametric plot for t in [0, 1] *)
+ParametricPlot[
+ {x[t], y[t]}, {t, 0, 1},
+ PlotRange -> All,
+ AxesLabel -> {"x(t)", "y(t)"},
+ PlotLabel -> "Parametric plot of x(t) and y(t)",
+ PlotPoints -> 100,
+ MaxRecursion -> 4,
+ AspectRatio -> 1,
+ PerformanceGoal -> "Quality"
+]

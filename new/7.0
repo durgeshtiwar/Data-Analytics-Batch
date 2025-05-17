@@ -1,0 +1,10 @@
+Solution:
+
+
+(* (a) Solve for h *)
+eq1 = v == Pi r^2/h;
+solH = Solve[eq1, h]
+
+(* (b) Solve for b *)
+eq2 = α^2 + b^2 == c^2;
+solB = Solve[eq2, b]

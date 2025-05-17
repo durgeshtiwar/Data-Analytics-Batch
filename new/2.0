@@ -1,0 +1,17 @@
+Solution: 
+
+
+(* Define alpha *)
+α = 1;
+
+(* Plot the function 2y * cos(α x) using Plot3D *)
+Plot3D[
+  2 y Cos[α x],
+  {x, -2 Pi, 2 Pi}, {y, -2, 2},
+  PlotStyle -> Directive[Blue, Opacity[0.8]],
+  AxesLabel -> {"x", "y", "f(x,y)"},
+  PlotLabel -> "Surface Plot of 2y * cos(α x)",
+  MeshFunctions -> {#3 &},
+  MeshStyle -> {{Thick, Black}},
+  Boxed -> True
+]

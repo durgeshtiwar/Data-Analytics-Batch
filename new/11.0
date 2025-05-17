@@ -1,0 +1,16 @@
+Solution:
+
+
+(* Define the 5x5 tridiagonal matrix *)
+A = DiagonalMatrix[ConstantArray[4, 5]] + 
+    DiagonalMatrix[ConstantArray[5, 4], 1] + 
+    DiagonalMatrix[ConstantArray[5, 4], -1];
+
+(* Compute eigenvalues *)
+eigenvalues = Eigenvalues[A]
+
+(* Compute eigenvectors *)
+eigenvectors = Eigenvectors[A]
+
+(* Display eigenpairs together (optional) *)
+eigenpairs = Transpose[{eigenvalues, eigenvectors}]

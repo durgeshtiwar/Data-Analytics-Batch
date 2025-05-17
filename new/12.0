@@ -1,0 +1,33 @@
+Solution:
+
+
+(* Choose a value for alpha *)
+α = 2; (* You can change this *)
+
+(* --- (a) Define the RHS of dx/dt --- *)
+f1[x_] := (x - α)(x^2 + α x + 4)(x^2 - 5 x + α)
+
+(* Find equilibrium points (real roots of RHS) *)
+eqPoints1 = Solve[f1[x] == 0, x, Reals]
+
+(* Plot direction field for system (a) *)
+Plot[f1[x], {x, -5, 8}, 
+ PlotLabel -> "dx/dt = f1(x) (System a)", 
+ AxesLabel -> {"x", "dx/dt"}, 
+ GridLines -> Automatic, 
+ PlotStyle -> Thick
+]
+
+(* --- (b) Define the RHS of dx/dt --- *)
+f2[x_] := Cos[(2 Pi x)/α]
+
+(* Find equilibrium points for system (b) *)
+eqPoints2 = Solve[f2[x] == 0, x, Reals] (* Will return symbolic *)
+
+(* Plot direction field for system (b) *)
+Plot[f2[x], {x, -2 α, 2 α}, 
+ PlotLabel -> "dx/dt = f2(x) (System b)", 
+ AxesLabel -> {"x", "dx/dt"}, 
+ GridLines -> Automatic, 
+ PlotStyle -> Thick
+]

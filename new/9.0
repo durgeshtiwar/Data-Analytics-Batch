@@ -1,0 +1,25 @@
+Solution:
+
+
+(* Parameters *)
+r = 1; (* growth rate *)
+K = 10; (* carrying capacity *)
+
+(* Define the logistic differential equation *)
+dPdt[P_] := r P (1 - P/K)
+
+(* Plot the phase line (slope vs. P) *)
+Plot[
+ dPdt[P],
+ {P, -2, 12},
+ AxesLabel -> {"P", "dP/dt"},
+ PlotLabel -> "Phase Line of Logistic Growth Model",
+ PlotStyle -> Thick,
+ GridLines -> Automatic,
+ Epilog -> {
+   Red, Dashed, Line[{{K, -2}, {K, 2}}], 
+   Text["K", {K + 0.5, 1.5}],
+   Blue, Dashed, Line[{{0, -2}, {0, 2}}],
+   Text["0", {0.5, 1.5}]
+ }
+]

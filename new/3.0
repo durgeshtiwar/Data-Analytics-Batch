@@ -1,0 +1,11 @@
+Solution: 
+
+
+(* Define the function h(t) *)
+h[t_] := ((1 + t^2)/(3 + 7 t))^(1/t)
+
+(* Compute the value at t = 19 *)
+valueAt19 = h[19]
+
+(* Output the numeric value *)
+N[valueAt19]

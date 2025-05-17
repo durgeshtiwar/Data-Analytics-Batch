@@ -1,0 +1,24 @@
+Solution:
+
+
+(* Define a value for alpha *)
+α = 2; (* You can set this to any value *)
+
+(* Define the piecewise function f(x) *)
+f[x_] := Piecewise[
+  {
+    {Sin[α x]/x, x < α},
+    {1, x == α},
+    {1 - x^2/100, x > α}
+  }
+];
+
+(* Plot the function on the interval [α - 10, α + 10] *)
+Plot[
+ f[x],
+ {x, α - 10, α + 10},
+ PlotStyle -> Thick,
+ AxesLabel -> {"x", "f(x)"},
+ PlotLabel -> "Piecewise Function f(x)",
+ GridLines -> Automatic
+]

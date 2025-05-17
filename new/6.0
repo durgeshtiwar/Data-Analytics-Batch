@@ -1,0 +1,21 @@
+Solution:
+
+
+(* Define the function and its derivative *)
+f[θ_] := Sin[2 θ] + 2 Cos[θ]
+fPrime[θ_] := D[f[θ], θ]
+
+(* Solve f'(θ) = 0 on the interval [0, 2 Pi] *)
+solutions = θ /. 
+  Solve[{fPrime[θ] == 0, 0 <= θ <= 2 Pi}, θ, Reals]
+
+(* Alternatively, use NSolve or FindRoot for numeric solutions *)
+numericSolutions = 
+  FindRoot[fPrime[θ] == 0, {θ, #}] & /@ {0, Pi/2, Pi, 3 Pi/2, 2 Pi}
+
+(* Plot f(θ) and f'(θ) *)
+Plot[{f[θ], fPrime[θ]}, {θ, 0, 2 Pi}, 
+ PlotLegends -> {"f(θ)", "f'(θ)"}, 
+ AxesLabel -> {"θ", "Value"},
+ PlotStyle -> {Blue, Red}, 
+ PlotLabel -> "Graphs of f(θ) and f'(θ)"]

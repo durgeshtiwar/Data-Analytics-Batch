@@ -1,0 +1,20 @@
+Solution:
+
+
+(* Define alpha *)
+α = 1; (* You can change this value *)
+
+(* Define the simplified equation *)
+eq = 2 (1 - α^2) x^2 + 3 y^2 == 0;
+
+(* Plot the curve *)
+ContourPlot[
+ eq,
+ {x, -2, 2}, {y, -2, 2},
+ ContourStyle -> {Thick, Blue},
+ AxesLabel -> {"x", "y"},
+ FrameLabel -> {"x", "y"},
+ PlotLabel -> "Modified Lemniscate of Bernoulli",
+ PlotPoints -> 100,
+ AspectRatio -> 1
+]
