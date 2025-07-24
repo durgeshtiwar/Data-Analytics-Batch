@@ -51,3 +51,28 @@ from course c right join student s on c.course_id = s.student_course_id;
 
 select c.course_id, c.course_name, c.course_desc, s.student_id, s.student_name, s.student_course_id 
 from course c cross join student s on c.course_id = s.student_course_id;
+
+select course_id , course_name from course
+union all
+select student_id , student_name from student;
+
+with sample_students as(
+select * from course where course_id in (101, 102, 103))
+select * from sample_students where course_tag = 'java';
+
+with sample_join as (
+(select c.course_id , c.course_name , c.course_desc ,s.student_id,s.student_name ,s.student_course_id from course c
+cross  join student s ))
+ select course_id , course_name ,student_id from sample_join where student_id = 301;
+
+with recursive cte(n) as(
+select 1 
+union all
+select n + 1 as b from cte where n<5)
+select * from cte;
+
+with recursive cte as(
+select 1 as p, 1 as q, -1 as r 
+union all 
+select p+1, q+2, r+3 from cte where p < 5)
+select * from cte
