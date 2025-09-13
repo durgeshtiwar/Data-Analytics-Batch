@@ -1,7 +1,7 @@
 # from hello_chai import chai
 # chai("ginger tea")
 
-import numpy as np
+# import numpy as np
 import time
 n = 5000
 m1 = [[e for e in range(n)] for i in range(n)]
