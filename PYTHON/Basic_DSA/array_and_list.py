@@ -33,3 +33,15 @@
 # print(type(list_1))
 # print(list_1)
 
+import array
+a = array.array('i',[2,4,6,9,4])
+
+# for i in a:
+#   print(i)
+
+a.append(50)
+a.insert(1, 30)
+a.reverse()
+a.extend((1,2,3))
+print(*a)
+print(a)
