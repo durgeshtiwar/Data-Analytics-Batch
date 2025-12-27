@@ -1,71 +1,24 @@
-# Learn all about functions by answering the questions below.
-
-<details>
-<summary>
-1. Basic Function Syntax
-</summary>
-Problem: Write a function to calculate and return the square of a number.
-</details>
-
-<details>
-<summary>
-2. Function with Multiple Parameters
-</summary>
-Problem: Create a function that takes two numbers as parameters and returns their sum.
-</details>
-
-<details>
-<summary>
-3. Polymorphism in Functions
-</summary>
-Problem: Write a function multiply that multiplies two numbers, but can also accept and multiply strings.
-</details>
-
-<details>
-<summary>
-4. Function Returning Multiple Values
-</summary>
-Problem: Create a function that returns both the area and circumference of a circle given its radius.
-</details>
-
-<details>
-<summary>
-5. Default Parameter Value
-</summary>
-Problem: Write a function that greets a user. If no name is provided, it should greet with a default name.
-</details>
-
-<details>
-<summary>
-6. Lambda Function
-</summary>
-Problem: Create a lambda function to compute the cube of a number.
-</details>
-
-<details>
-<summary>
-7. Function with *args
-</summary>
-Problem: Write a function that takes variable number of arguments and returns their sum.
-</details>
-
-<details>
-<summary>
-8. Function with **kwargs
-</summary>
-Problem: Create a function that accepts any number of keyword arguments and prints them in the format key: value.
-</details>
-
-<details>
-<summary>
-9. Generator Function with yield
-</summary>
-Problem: Write a generator function that yields even numbers up to a specified limit.
-</details>
-
-<details>
-<summary>
-10. Recursive Function
-</summary>
-Problem: Create a recursive function to calculate the factorial of a number.
-</details>
+"1 . you have to write a fun which will take string and return a len of \n",
+"it without using a inbuilt fun len\n",
+"2 . write a fun which will be able to print an index of all premitive element which you will pass \n",
+"3 . Write a fun which will take input as a dict and give me out as a list of all the values \n",
+"even in case of 2 level nesting it should work . \n",
+"4 . write a fun which will take another function as an input and return me an output \n",
+"5. write a function whihc will take multiple list as a input and give me concatnation of all the element as \n",
+"and output \n",
+"6 . write a function which will be able to take a list as an input return an index of each element \n",
+"like a inbuilt index function but even if we have repetative element it should return index \n",
+"7 . Write a function which will whould return list of all the file name from a directory . \n",
+"8 . write a function which will be able to show your system configuration . \n",
+"9 . write a function which will be able to show date and time . \n",
+"10 . write a function whihc will be able to read a image file and show it to you .\n",
+"11 . write a function which can read video file and play for you . \n",
+"12 . write a function whihc can move a file from one directory to another directory . \n",
+"13 . write a function which will be able to shutdonw your system . \n",
+"14 . write a function whihc will be able to access your mail . \n",
+"15 . write a func bywhcih i can send a mail to anyone \n",
+"16. write a func to read a complete PDf file . \n",
+"17. write a function to read a word file . \n",
+"18 . write a function which can help you to filter only word file from a directory . \n",
+"19 . write a function by which you can print an ip address of your system . \n",
+"20 . write a function by which you will be able to append two PDF files . "
